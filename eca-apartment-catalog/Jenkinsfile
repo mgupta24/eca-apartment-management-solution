@@ -1,0 +1,69 @@
+pipeline {
+    environment {
+        REGISTRY_NAME = "singhvishab/eca-apartment"
+        APP_NAME= "eca-apartment-catalog"
+     }
+
+    agent any
+    tools {
+        maven "MAVEN_HOME"
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                cleanWs()
+                withCredentials([string(credentialsId: 'GITHUB_TOKEN_PS', variable: '')]) {
+                    git branch: 'main', url: 'https://github.com/vishabsingh09/eca-program.git'
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                sh "mvn -f $APP_NAME/pom.xml clean install -DskipTests"
+            }
+        }
+
+         stage('Test & Code Coverage') {
+            steps {
+                sh "mvn -f $APP_NAME/pom.xml -Dmaven.test.failure.ignore=true clean package"
+            }
+             post {
+                success {
+                     archiveArtifacts "$APP_NAME/target/*.jar"
+                     junit "$APP_NAME/target/surefire-reports/*.xml"
+                     jacoco execPattern: "$APP_NAME/target/jacoco.exec"
+                     recordCoverage(tools:
+                              [[parser: 'JACOCO']],
+                              id: 'jacoco', name: 'JaCoCo Coverage',
+                              sourceCodeRetention: 'EVERY_BUILD'
+                      )
+                }
+            }
+        }
+
+        stage('Building image') {
+          steps{
+            sh "docker build -t $REGISTRY_NAME:$BUILD_NUMBER ./$APP_NAME"
+          }
+        }
+
+        stage('Docker Build & Push') {
+            steps {
+                withDockerRegistry(credentialsId: 'DOCKER_HUB_USER_PS', url: '') {
+                    sh 'docker push $REGISTRY_NAME:$BUILD_NUMBER'
+                }
+            }
+			post {
+                success {
+                    sh 'docker rmi $REGISTRY_NAME:$BUILD_NUMBER'
+                }
+            }
+        }
+    }
+
+    post {
+       always {
+           deleteDir()
+       }
+   }
+}

@@ -1,0 +1,43 @@
+server:
+  port: ${CATALOG_PORT:6092}
+eca:
+  openapi:
+    dev-url: http://localhost:${server.port}
+    prod-url: ${SWAGGER_IP_ADDRESS:http://localhost:6092}
+eureka:
+  instance:
+    preferIpAddress: ${EUREKA_PREFER_IP:false}
+    hostname: ${HOST_NAME_APARTMENT:localhost}
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+logging:
+  level:
+    root: INFO
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+spring:
+  application:
+    name: ecacatalog
+  profiles:
+    active: dev
+  sleuth:
+    enabled: true
+    sampler:
+      probability: 1
+  zipkin:
+    base-url: ${ZIPKIN_URI:http://localhost:9411/}

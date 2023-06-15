@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "0495e320-2034-4c75-bc40-35a00435c744",
+		"name": "ECA-UserMGMT-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "publishMessage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "JAI CHANDI MAA",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/kafka/publish",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"kafka",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actuator",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9PV05FUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9QRVJNSVNTSU9OIn0seyJhdXRob3JpdHki...\n",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6090/actuator/beans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6090",
+					"path": [
+						"actuator",
+						"beans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"newUser\",\r\n  \"lastName\": \"newLastName\",\r\n  \"phoneNo\": \"1234567890\",\r\n  \"emailId\": \"tenant@gmail.com\",\r\n  \"password\": \"tenant@123\",\r\n  \"addressLine\": \"JAMMU\",\r\n  \"city\": \"JAMMU\",\r\n  \"state\": \"Jammu & Kashmir\",\r\n  \"zipCode\": \"184105\",\r\n  \"apartmentCost\": \"450000\",\r\n  \"type\": \"TENANT\",\r\n  \"leaseStartDate\": \"24/03/2022\",\r\n  \"leaseEndDate\" : \"24/04/2023\",\r\n  \"apartmentId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6090/v1/users/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6090",
+					"path": [
+						"v1",
+						"users",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAll_UsersDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9PV05FUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9QRVJNSVNTSU9OIn0seyJhdXRob3JpdHki...\n",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/users/getAllUsers",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"getAllUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAll_TenatsAPI",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9PV05FUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9QRVJNSVNTSU9OIn0seyJhdXRob3JpdHki...\n",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/users/tenants",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"tenants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "finduserByPhoneNumber",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9PV05FUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9QRVJNSVNTSU9OIn0seyJhdXRob3JpdHki...\n",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Test23\",\r\n  \"lastName\": \"singhLast\",\r\n  \"phoneNo\": \"9590319707\",\r\n  \"emailId\": \"testowner@gmail.com\",\r\n  \"addressLine\": \"JAMMU\",\r\n  \"city\": \"JAMMU\",\r\n  \"state\": \"J&K\",\r\n  \"zipCode\": \"184105\",\r\n  \"password\": \"test_f14aeccce105\",\r\n  \"apartmentCost\": \"450000\",\r\n  \"type\": \"Owner\",\r\n  \"leaseStartDate\": \"24/03/2022\",\r\n  \"leaseEndDate\" : \"24/04/2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/users/phone/9590319707",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"phone",
+						"9590319707"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate_Token_For_Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.environment.set(\"token\",data.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   // OWNER\r\n   \"username\": \"vishabsingh@gmail.com\",\r\n    \"password\": \"vishabsingh\"\r\n    // TENANT\r\n    // \"username\": \"tenant@gmail.com\",\r\n     //\"password\": \"tenant@123\"\r\n     // VENDOR\r\n     //\"username\": \"vendor2.test@gmail.com\",\r\n     //\"password\": \"vendor@1234\"\r\n\r\n     \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/users/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateById",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"type\": \"TENANT\",\r\n            \"firstName\": \"updatedF\",\r\n            \"lastName\": \"updatedL\",\r\n            \"phoneNo\": 9558121482,\r\n            \"emailId\": \"updated@gmail.com\",\r\n            \"addressLine\": \"UpdatedAddress \",\r\n            \"city\": \"updatedKathua\",\r\n            \"state\": \"updatedJ&K\",\r\n            \"zipCode\": \"184148\",\r\n            \"apartmentCost\": 450000,\r\n            \"leaseStartDate\": \"24/02/2023\",\r\n            \"leaseEndDate\": \"24/02/2028\",\r\n            \"password\": \"updatedPwd\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/users/tenants/8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"tenants",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserBasedOnType",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9PV05FUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9QRVJNSVNTSU9OIn0seyJhdXRob3JpdHki...\n",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"addressLine\": \"UpdatedBLR\",\r\n  \"city\": \"UpdwtedUDHAMPUR\",\r\n  \"emailId\": \"owner1-updated@gmail.com\",\r\n  \"firstName\": \"updated-owner\",\r\n  \"id\": 3,\r\n  \"lastName\": \"updatedOwnerLast\",\r\n  \"password\": \"updatedOwner@test.com\",\r\n  \"phoneNo\": 8290829027,\r\n  \"state\": \"UpdatedJ&K\",\r\n  \"type\": \"OWNER\",\r\n  \"zipCode\": \"184148\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/users/owner/11",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"owner",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

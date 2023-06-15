@@ -1,0 +1,32 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: ecaconfigserver
+  profiles:
+    active: prod
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: "*"
+eureka:
+  instance:
+    preferIpAddress: ${EUREKA_PREFER_IP:false}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+
+logging:
+  level:
+    root: INFO

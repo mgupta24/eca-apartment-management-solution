@@ -1,0 +1,14 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVER_URL:localhost:9094}
+  datasource:
+    url: jdbc:postgresql://${POSTGRESQL_URI:localhost}:5432/${VISITOR_MGM_POSTGRES_DB:postgres}
+    username: ${POSTGRES_USER_NAME:postgres}
+    password: ${POSTGRES_USER_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
