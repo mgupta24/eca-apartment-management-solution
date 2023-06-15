@@ -40,11 +40,11 @@ class CommonUtilsTest {
 	@Test
 	void createVisitorTest(){
 		var visitor = Visitor.builder().visitorFirstName("Test")
-				.visitorLastName("Singh").build();
+				.visitorLastName("Gupta").build();
 		assertThat(commonUtils.createVisitorkafkaMessageDto(visitor))
 				.isNotNull()
 				.extracting(VisitorKafkaMessageDTO::getVisitorFirstName,VisitorKafkaMessageDTO::getVisitorLastName)
 				.doesNotContainNull()
-				.contains("Test","Singh");
+				.contains("Test","Gupta");
 	}
 }

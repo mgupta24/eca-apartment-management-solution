@@ -10,9 +10,9 @@
     "visitorState": "Rajasthan",
     "visitorZipCode": "302033",
     "purposeOfVisiting": "Meeting friend",
-    "userFirstName": "Vishab",
-    "userLastName": "SINGH",
-    "userEmailId": "vishabsingh@gmail.com",
+    "userFirstName": "TestUser",
+    "userLastName": "TestUser",
+    "userEmailId": "test@gmail.com",
     "userPhoneNo": 9590319707,
     "apartmentId": 1,
     "apartmentName": "TEST"
