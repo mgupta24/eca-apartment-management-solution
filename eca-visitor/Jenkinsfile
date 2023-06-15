@@ -1,22 +1,18 @@
 pipeline {
     environment {
-        REGISTRY_NAME = "singhvishab/eca-visitor"
-        APP_NAME= "eca-visitor"
+        REGISTRY_NAME = "mgupta25/eca-visitor"
+        APP_NAME mvn = "eca-visitor"
      }
 
     agent any
-    tools {
-        maven "MAVEN_HOME"
-    }
+
     stages {
         stage('Checkout') {
             steps {
                 cleanWs()
-                withCredentials([string(credentialsId: 'GITHUB_TOKEN_PS', variable: '')]) {
-                    git branch: 'main', url: 'https://github.com/vishabsingh09/eca-program.git'
+                     git branch: 'main', url: 'https://github.com/mgupta24/eca-apartment-management-solution.git'
                 }
             }
-        }
         stage('Build') {
             steps {
                 sh "mvn -f $APP_NAME/pom.xml clean install -DskipTests"
