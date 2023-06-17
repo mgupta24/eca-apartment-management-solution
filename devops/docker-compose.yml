@@ -33,7 +33,7 @@ services:
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
       KAFKA_TOOLS_LOG4J_LOGLEVEL: ERROR
   ecadiscovery:
-    image: singhvishab/ecadiscovery:latest
+    image: mgupta25/ecadiscovery:latest
     ports:
       - 8761:8761
     volumes:
@@ -48,7 +48,7 @@ services:
       - EUREKA_HOST_NAME=ecadiscovery
 
   ecaconfigserver:
-    image: singhvishab/ecaconfigserver
+    image: mgupta25/ecaconfigserver
     ports:
       - 8070:8070
     volumes:
@@ -63,7 +63,7 @@ services:
       - ecadiscovery
     container_name: configserver
   ecaapartmentcatalog:
-    image: singhvishab/eca-apartment
+    image: mgupta25/ecaapartment
     ports:
       - 6092:6092
     volumes:
@@ -82,7 +82,7 @@ services:
     depends_on:
       - ecadiscovery
   ecausermgmt:
-    image: singhvishab/eca-usermgmt
+    image: mgupta25/ecausermgmt
     ports:
       - 6090:6090
     volumes:
