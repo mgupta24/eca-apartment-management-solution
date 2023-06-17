@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b53b7a34-931c-4e6c-95ff-30b3cd5360e8" name="Changes" comment="updating read me">
+      <change beforePath="$PROJECT_DIR$/eca-apartment-catalog/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/eca-apartment-catalog/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-apartment-catalog/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/eca-apartment-catalog/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-apartment-catalog/dockerbuild.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-apartment-catalog/dockerpush.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-apartment-catalog/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/eca-apartment-catalog/entrypoint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-apartment-catalog/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eca-apartment-catalog/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-configserver/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/eca-configserver/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-discovery/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/eca-discovery/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-usermgmt/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/eca-usermgmt/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-visitor/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/eca-visitor/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-visitor/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/eca-visitor/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-visitor/dockerbuild.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-visitor/dockerpush.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eca-visitor/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/eca-visitor/entrypoint.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="02742c7e-8a2e-4d10-aa5a-22eb05e41429" />
+        <option name="url" value="https://github.com/mgupta24/eca-apartment-management-solution.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2REwoM1SWbJur7MEb44brQFdQed" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "last_opened_file_path": "D:/eca-apartment-management-solution/eca-discovery"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\eca-apartment-management-solution\eca-apartment-catalog" />
+      <recent name="D:\eca-apartment-management-solution\eca-visitor" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b53b7a34-931c-4e6c-95ff-30b3cd5360e8" name="Changes" comment="" />
+      <created>1686828723759</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686828723759</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Modifying test classes">
+      <created>1686831650350</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686831650350</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updating read me">
+      <created>1686850699042</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686850699042</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="9ae2e50a-dda9-4b4e-b77b-1a31e90a11a1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="9ae2e50a-dda9-4b4e-b77b-1a31e90a11a1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modifying test classes" />
+    <MESSAGE value="updating read me" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating read me" />
+  </component>
+</project>

@@ -53,7 +53,7 @@ app:
     connectTimeOutInSeconds: 120
   openapi:
     dev-url: http://localhost:${server.port}
-    prod-url: ${SWAGGER_IP_ADDRESS:http://localhost:6092}
+    prod-url: ${SWAGGER_IP_ADDRESS:http://localhost:6090}
 feign:
   httpclient:
     enabled: true

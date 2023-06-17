@@ -13,12 +13,12 @@
 	<artifactId>eca-apartment-catalog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eca-apartment-catalog</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Apartment Module</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.7</spring-cloud.version>
 		<junit-jupiter.version>5.9.0</junit-jupiter.version>
-		<docker.image.prefix>singhvishab</docker.image.prefix>
+		<docker.image.prefix>mgupta25</docker.image.prefix>
 		<docker.image.suffix></docker.image.suffix>
 	</properties>
 	<dependencies>

@@ -57,7 +57,7 @@ class TenantControllerTest {
 
 	@Test
 	@Order(3)
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void findAllTenants() throws Exception {
 		mvc.perform(
 				MockMvcRequestBuilders.get(URL_PATH)
@@ -72,7 +72,7 @@ class TenantControllerTest {
 	@Test
 	@SneakyThrows
 	@Order(1)
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void createTenantsTest() {
 		var tenantsDto = jsonUtils.jsonToObject(readTenantsJson(), TenantsDTO.class);
 		tenantsDto.setEmailId("robin_singh@gmail.com");
@@ -93,12 +93,12 @@ class TenantControllerTest {
 	@Test
 	@SneakyThrows
 	@Order(2)
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void updateTest() {
 		var tenantsDto = jsonUtils.jsonToObject(readTenantsJson(), TenantsDTO.class);
 		tenantsDto.setEmailId("testuser@gmail.com");
-		tenantsDto.setFirstName("VISHAB");
-		tenantsDto.setLastName("SINGH");
+		tenantsDto.setFirstName("MITALI");
+		tenantsDto.setLastName("GUPTA");
 		mvc.perform(
 						put(StringUtils.join(URL_PATH,"/4"))
 								.contentType(MediaType.APPLICATION_JSON)
@@ -110,7 +110,7 @@ class TenantControllerTest {
 	@Test
 	@SneakyThrows
 	@Order(4)
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void deleteTest() {
 		mvc.perform(
 						delete(StringUtils.join(URL_PATH,"/1"))
@@ -120,7 +120,7 @@ class TenantControllerTest {
 	}
 	@Test
 	@Order(5)
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void findTenantsByIdTest() throws Exception {
 		mvc.perform(
 						MockMvcRequestBuilders.get(URL_PATH)

@@ -1,45 +1,40 @@
 pipeline {
     environment {
-        REGISTRY_NAME = "singhvishab/eca-discovery"
-        APP_NAME= "eca-discovery"
+        REGISTRY_NAME = "mgupta25/eca-discovery"
+        APP_NAME = "eca-discovery"
      }
 
     agent any
     tools {
-        maven "MAVEN_HOME"
-    }
+            maven "MAVEN_HOME"
+        }
+
     stages {
         stage('Checkout') {
             steps {
                 cleanWs()
-                withCredentials([string(credentialsId: 'GITHUB_TOKEN_PS', variable: '')]) {
-                    git branch: 'main', url: 'https://github.com/vishabsingh09/eca-program.git'
+                     git branch: 'main', url: 'https://github.com/mgupta24/eca-apartment-management-solution.git'
                 }
             }
-        }
         stage('Build') {
             steps {
                 sh "mvn -f $APP_NAME/pom.xml clean install -DskipTests"
             }
         }
 
-         stage('Test & Code Coverage') {
-            steps {
-                sh "mvn -f $APP_NAME/pom.xml -Dmaven.test.failure.ignore=true clean package"
-            }
-             post {
-                success {
-                     archiveArtifacts "$APP_NAME/target/*.jar"
-                     junit "$APP_NAME/target/surefire-reports/*.xml"
-                     jacoco execPattern: "$APP_NAME/target/jacoco.exec"
-                     recordCoverage(tools:
-                              [[parser: 'JACOCO']],
-                              id: 'jacoco', name: 'JaCoCo Coverage',
-                              sourceCodeRetention: 'EVERY_BUILD'
-                      )
+        stage('Sonar Analysis') {
+                    steps {
+                       sh "mvn -f $APP_NAME/pom.xml clean package"
+                        dir("eca-discovery"){
+                        sh "mvn sonar:sonar \
+                        -Dsonar.projectKey=eca-discovery: \
+                        -Dsonar.projectName=eca-discovery \
+                        -Dsonar.java.binaries=."
+                    }
                 }
-            }
         }
+
+
 
         stage('Building image') {
           steps{

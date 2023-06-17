@@ -1,43 +1,44 @@
 pipeline {
     environment {
-        REGISTRY_NAME = "singhvishab/eca-usermgmt"
+        REGISTRY_NAME = "mgupta25/eca-usermgmt"
+        APP_NAME = "eca-usermgmt"
      }
 
     agent any
     tools {
-        maven "MAVEN_HOME"
-    }
+            maven "MAVEN_HOME"
+        }
+
     stages {
         stage('Checkout') {
             steps {
                 cleanWs()
-                withCredentials([string(credentialsId: 'GITHUB_TOKEN_PS', variable: '')]) {
-                    git branch: 'main', url: 'https://github.com/vishabsingh09/eca-usermgmt.git '
+                     git branch: 'main', url: 'https://github.com/mgupta24/eca-apartment-management-solution.git'
                 }
             }
-        }
         stage('Build') {
             steps {
-                sh "mvn clean install -DskipTests"
+                sh "mvn -f $APP_NAME/pom.xml clean install -DskipTests"
             }
         }
 
-         stage('Test & Code Coverage') {
-            steps {
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-             post {
-                success {
-                     archiveArtifacts 'target/*.jar'
-                     junit 'target/surefire-reports/*.xml'
-                     jacoco execPattern: 'target/jacoco.exec'
+        stage('Sonar Analysis') {
+                    steps {
+                       sh "mvn -f $APP_NAME/pom.xml clean package"
+                        dir("eca-usermgmt"){
+                        sh "mvn sonar:sonar \
+                        -Dsonar.projectKey=eca-usermgmt: \
+                        -Dsonar.projectName=eca-usermgmt \
+                        -Dsonar.java.binaries=."
+                    }
                 }
-            }
         }
+
+
 
         stage('Building image') {
           steps{
-            sh 'docker build -t $REGISTRY_NAME:$BUILD_NUMBER .'
+            sh 'docker build -t $REGISTRY_NAME:$BUILD_NUMBER ./eca-usermgmt'
           }
         }
 
@@ -47,11 +48,10 @@ pipeline {
                     sh 'docker push $REGISTRY_NAME:$BUILD_NUMBER'
                 }
             }
-        }
-
-        stage('Remove Build Image') {
-            steps {
-                sh 'docker rmi $REGISTRY_NAME:$BUILD_NUMBER'
+            post {
+                success {
+                    sh 'docker rmi $REGISTRY_NAME:$BUILD_NUMBER'
+                }
             }
         }
     }

@@ -6,7 +6,7 @@ spring:
   application:
     name: ecadiscovery
   profiles:
-    active: default
+    active: dev
 ribbon:
   eureka:
     enabled: true

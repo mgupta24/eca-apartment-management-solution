@@ -1,0 +1,162 @@
+2023-06-17 23:05:17.927 [INFO ] EcaApartmentCatalogApplication    [main]  c.e.c.EcaApartmentCatalogApplication Starting EcaApartmentCatalogApplication using Java 11.0.18 on LAPTOP-75BMVO9L with PID 2512 (D:\eca-apartment-management-solution\eca-apartment-catalog\target\classes started by MITALI in D:\eca-apartment-management-solution\eca-discovery)
+2023-06-17 23:05:17.936 [INFO ] EcaApartmentCatalogApplication    [main]  c.e.c.EcaApartmentCatalogApplication The following 1 profile is active: "dev"
+2023-06-17 23:05:19.327 [INFO ] RepositoryConfigurationDelegate    [main]  o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-17 23:05:19.485 [INFO ] RepositoryConfigurationDelegate    [main]  o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 150 ms. Found 2 JPA repository interfaces.
+2023-06-17 23:05:20.024 [INFO ] GenericScope    [main]  o.s.c.c.s.GenericScope BeanFactory id=04a0c80a-eb5b-3672-b6fa-53197a5fe93a
+2023-06-17 23:05:21.321 [INFO ] TomcatWebServer    [main]  o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 6092 (http)
+2023-06-17 23:05:21.330 [INFO ] StandardService    [main]  o.a.c.c.StandardService Starting service [Tomcat]
+2023-06-17 23:05:21.330 [INFO ] StandardEngine    [main]  o.a.c.c.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-06-17 23:05:21.572 [INFO ] [/]    [main]  o.a.c.c.C.[.[.[/] Initializing Spring embedded WebApplicationContext
+2023-06-17 23:05:21.573 [INFO ] ServletWebServerApplicationContext    [main]  o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 3594 ms
+2023-06-17 23:05:21.892 [INFO ] HikariDataSource    [main]  c.z.h.HikariDataSource HikariPool-1 - Starting...
+2023-06-17 23:05:22.184 [INFO ] HikariDataSource    [main]  c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2023-06-17 23:05:22.203 [INFO ] H2ConsoleAutoConfiguration    [main]  o.s.b.a.h.H2ConsoleAutoConfiguration H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:ecausermgmt'
+2023-06-17 23:05:22.855 [WARN ] ZipkinAutoConfiguration    [pool-1-thread-1]  o.s.c.s.a.z.ZipkinAutoConfiguration Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect}]
+2023-06-17 23:05:23.670 [INFO ] LogHelper    [main]  o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-17 23:05:23.735 [INFO ] Version    [main]  o.h.Version HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-17 23:05:23.886 [INFO ] Version    [main]  o.h.a.c.Version HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-17 23:05:23.997 [INFO ] Dialect    [main]  o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-06-17 23:05:24.590 [INFO ] JtaPlatformInitiator    [main]  o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-17 23:05:25.390 [WARN ] JpaBaseConfiguration$JpaWebConfiguration    [main]  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-17 23:05:28.231 [INFO ] DiscoveryClientOptionalArgsConfiguration    [main]  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration Eureka HTTP Client uses RestTemplate.
+2023-06-17 23:05:28.659 [WARN ] LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger    [main]  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-06-17 23:05:28.760 [INFO ] EndpointLinksResolver    [main]  o.s.b.a.e.w.EndpointLinksResolver Exposing 17 endpoint(s) beneath base path '/actuator'
+2023-06-17 23:05:28.833 [INFO ] TomcatWebServer    [main]  o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 6092 (http) with context path ''
+2023-06-17 23:05:29.102 [INFO ] EcaApartmentCatalogApplication    [main]  c.e.c.EcaApartmentCatalogApplication Started EcaApartmentCatalogApplication in 11.948 seconds (JVM running for 12.956)
+2023-06-17 23:06:53.072 [INFO ] ZipkinAutoConfiguration    [Thread-3]  o.s.c.s.a.z.ZipkinAutoConfiguration Flushing remaining spans on shutdown
+2023-06-17 23:06:53.207 [INFO ] SchemaDropperImpl$DelayedDropActionImpl    [SpringApplicationShutdownHook]  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-06-17 23:06:54.298 [INFO ] HikariDataSource    [SpringApplicationShutdownHook]  c.z.h.HikariDataSource HikariPool-1 - Shutdown initiated...
+2023-06-17 23:06:54.305 [INFO ] HikariDataSource    [SpringApplicationShutdownHook]  c.z.h.HikariDataSource HikariPool-1 - Shutdown completed.
+2023-06-17 23:06:58.718 [INFO ] EcaApartmentCatalogApplication    [main]  c.e.c.EcaApartmentCatalogApplication Starting EcaApartmentCatalogApplication using Java 11.0.18 on LAPTOP-75BMVO9L with PID 25444 (D:\eca-apartment-management-solution\eca-apartment-catalog\target\classes started by MITALI in D:\eca-apartment-management-solution\eca-discovery)
+2023-06-17 23:06:58.729 [INFO ] EcaApartmentCatalogApplication    [main]  c.e.c.EcaApartmentCatalogApplication The following 1 profile is active: "dev"
+2023-06-17 23:06:59.747 [INFO ] RepositoryConfigurationDelegate    [main]  o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-17 23:06:59.879 [INFO ] RepositoryConfigurationDelegate    [main]  o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 124 ms. Found 2 JPA repository interfaces.
+2023-06-17 23:07:00.312 [INFO ] GenericScope    [main]  o.s.c.c.s.GenericScope BeanFactory id=04a0c80a-eb5b-3672-b6fa-53197a5fe93a
+2023-06-17 23:07:01.308 [INFO ] TomcatWebServer    [main]  o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 6092 (http)
+2023-06-17 23:07:01.315 [INFO ] StandardService    [main]  o.a.c.c.StandardService Starting service [Tomcat]
+2023-06-17 23:07:01.316 [INFO ] StandardEngine    [main]  o.a.c.c.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-06-17 23:07:01.523 [INFO ] [/]    [main]  o.a.c.c.C.[.[.[/] Initializing Spring embedded WebApplicationContext
+2023-06-17 23:07:01.524 [INFO ] ServletWebServerApplicationContext    [main]  o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2750 ms
+2023-06-17 23:07:01.818 [INFO ] HikariDataSource    [main]  c.z.h.HikariDataSource HikariPool-1 - Starting...
+2023-06-17 23:07:02.054 [INFO ] HikariDataSource    [main]  c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2023-06-17 23:07:02.069 [INFO ] H2ConsoleAutoConfiguration    [main]  o.s.b.a.h.H2ConsoleAutoConfiguration H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:ecausermgmt'
+2023-06-17 23:07:02.653 [WARN ] ZipkinAutoConfiguration    [pool-1-thread-1]  o.s.c.s.a.z.ZipkinAutoConfiguration Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect}]
+2023-06-17 23:07:03.324 [INFO ] LogHelper    [main]  o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-17 23:07:03.377 [INFO ] Version    [main]  o.h.Version HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-17 23:07:03.538 [INFO ] Version    [main]  o.h.a.c.Version HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-17 23:07:03.659 [INFO ] Dialect    [main]  o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-06-17 23:07:04.131 [INFO ] JtaPlatformInitiator    [main]  o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-17 23:07:04.862 [WARN ] JpaBaseConfiguration$JpaWebConfiguration    [main]  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-17 23:07:07.044 [INFO ] DiscoveryClientOptionalArgsConfiguration    [main]  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration Eureka HTTP Client uses RestTemplate.
+2023-06-17 23:07:07.459 [WARN ] LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger    [main]  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-06-17 23:07:07.548 [INFO ] EndpointLinksResolver    [main]  o.s.b.a.e.w.EndpointLinksResolver Exposing 17 endpoint(s) beneath base path '/actuator'
+2023-06-17 23:07:07.619 [INFO ] TomcatWebServer    [main]  o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 6092 (http) with context path ''
+2023-06-17 23:07:07.840 [INFO ] EcaApartmentCatalogApplication    [main]  c.e.c.EcaApartmentCatalogApplication Started EcaApartmentCatalogApplication in 9.733 seconds (JVM running for 10.551)
+2023-06-17 23:08:15.019 [INFO ] [/] 505ffab6aed37be7   [http-nio-6092-exec-1]  o.a.c.c.C.[.[.[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-17 23:08:15.729 [INFO ] AbstractOpenApiResource b3106ef092142d40   [http-nio-6092-exec-8]  o.s.a.AbstractOpenApiResource Init duration for springdoc-openapi is: 311 ms
+2023-06-17 23:08:16.364 [WARN ] AsyncReporter$BoundedAsyncReporter    [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}]  z.r.AsyncReporter$BoundedAsyncReporter Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2023-06-17 23:08:16.367 [WARN ] AsyncReporter$BoundedAsyncReporter    [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}]  z.r.AsyncReporter$BoundedAsyncReporter Dropped 2 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.cloud.sleuth.zipkin2.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateWrapper.java:67)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:666)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.post(RestTemplateSender.java:51)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.lambda$new$0(RestTemplateSender.java:44)
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender.post(HttpSender.java:137)
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender$HttpPostCall.doExecute(HttpSender.java:150)
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender$HttpPostCall.doExecute(HttpSender.java:140)
+	at zipkin2.Call$Base.execute(Call.java:391)
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299)
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:508)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:603)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:276)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:375)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:396)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 11 common frames omitted
+2023-06-17 23:13:48.975 [INFO ] ZipkinAutoConfiguration    [Thread-3]  o.s.c.s.a.z.ZipkinAutoConfiguration Flushing remaining spans on shutdown
+2023-06-17 23:13:49.312 [INFO ] SchemaDropperImpl$DelayedDropActionImpl    [SpringApplicationShutdownHook]  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-06-17 23:13:50.240 [INFO ] HikariDataSource    [SpringApplicationShutdownHook]  c.z.h.HikariDataSource HikariPool-1 - Shutdown initiated...
+2023-06-17 23:13:50.246 [INFO ] HikariDataSource    [SpringApplicationShutdownHook]  c.z.h.HikariDataSource HikariPool-1 - Shutdown completed.
+2023-06-17 23:14:13.710 [INFO ] EcaApartmentCatalogApplication    [main]  c.e.c.EcaApartmentCatalogApplication Starting EcaApartmentCatalogApplication using Java 11.0.18 on LAPTOP-75BMVO9L with PID 24436 (D:\eca-apartment-management-solution\eca-apartment-catalog\target\classes started by MITALI in D:\eca-apartment-management-solution\eca-discovery)
+2023-06-17 23:14:13.721 [INFO ] EcaApartmentCatalogApplication    [main]  c.e.c.EcaApartmentCatalogApplication The following 1 profile is active: "dev"
+2023-06-17 23:14:14.809 [INFO ] RepositoryConfigurationDelegate    [main]  o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-17 23:14:14.946 [INFO ] RepositoryConfigurationDelegate    [main]  o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 128 ms. Found 2 JPA repository interfaces.
+2023-06-17 23:14:15.386 [INFO ] GenericScope    [main]  o.s.c.c.s.GenericScope BeanFactory id=04a0c80a-eb5b-3672-b6fa-53197a5fe93a
+2023-06-17 23:14:16.413 [INFO ] TomcatWebServer    [main]  o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 6092 (http)
+2023-06-17 23:14:16.418 [INFO ] StandardService    [main]  o.a.c.c.StandardService Starting service [Tomcat]
+2023-06-17 23:14:16.418 [INFO ] StandardEngine    [main]  o.a.c.c.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-06-17 23:14:16.604 [INFO ] [/]    [main]  o.a.c.c.C.[.[.[/] Initializing Spring embedded WebApplicationContext
+2023-06-17 23:14:16.604 [INFO ] ServletWebServerApplicationContext    [main]  o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2839 ms
+2023-06-17 23:14:16.881 [INFO ] HikariDataSource    [main]  c.z.h.HikariDataSource HikariPool-1 - Starting...
+2023-06-17 23:14:17.124 [INFO ] HikariDataSource    [main]  c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2023-06-17 23:14:17.138 [INFO ] H2ConsoleAutoConfiguration    [main]  o.s.b.a.h.H2ConsoleAutoConfiguration H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:ecausermgmt'
+2023-06-17 23:14:17.702 [WARN ] ZipkinAutoConfiguration    [pool-1-thread-1]  o.s.c.s.a.z.ZipkinAutoConfiguration Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect}]
+2023-06-17 23:14:18.364 [INFO ] LogHelper    [main]  o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-17 23:14:18.417 [INFO ] Version    [main]  o.h.Version HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-17 23:14:18.580 [INFO ] Version    [main]  o.h.a.c.Version HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-17 23:14:18.687 [INFO ] Dialect    [main]  o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-06-17 23:14:19.137 [INFO ] JtaPlatformInitiator    [main]  o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-17 23:14:19.910 [WARN ] JpaBaseConfiguration$JpaWebConfiguration    [main]  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-17 23:14:22.135 [INFO ] DiscoveryClientOptionalArgsConfiguration    [main]  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration Eureka HTTP Client uses RestTemplate.
+2023-06-17 23:14:22.518 [WARN ] LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger    [main]  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-06-17 23:14:22.602 [INFO ] EndpointLinksResolver    [main]  o.s.b.a.e.w.EndpointLinksResolver Exposing 17 endpoint(s) beneath base path '/actuator'
+2023-06-17 23:14:22.674 [INFO ] TomcatWebServer    [main]  o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 6092 (http) with context path ''
+2023-06-17 23:14:22.995 [INFO ] EcaApartmentCatalogApplication    [main]  c.e.c.EcaApartmentCatalogApplication Started EcaApartmentCatalogApplication in 9.923 seconds (JVM running for 10.729)
+2023-06-17 23:21:23.673 [INFO ] [/] 185e7888168dd69a   [http-nio-6092-exec-1]  o.a.c.c.C.[.[.[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-17 23:21:24.392 [INFO ] AbstractOpenApiResource e889b90445d9ab7e   [http-nio-6092-exec-5]  o.s.a.AbstractOpenApiResource Init duration for springdoc-openapi is: 429 ms
+2023-06-17 23:21:24.899 [WARN ] AsyncReporter$BoundedAsyncReporter    [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}]  z.r.AsyncReporter$BoundedAsyncReporter Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2023-06-17 23:21:24.913 [WARN ] AsyncReporter$BoundedAsyncReporter    [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}]  z.r.AsyncReporter$BoundedAsyncReporter Dropped 2 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.cloud.sleuth.zipkin2.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateWrapper.java:67)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:666)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.post(RestTemplateSender.java:51)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.lambda$new$0(RestTemplateSender.java:44)
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender.post(HttpSender.java:137)
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender$HttpPostCall.doExecute(HttpSender.java:150)
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender$HttpPostCall.doExecute(HttpSender.java:140)
+	at zipkin2.Call$Base.execute(Call.java:391)
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299)
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:508)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:603)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:276)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:375)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:396)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 11 common frames omitted
+2023-06-17 23:54:58.387 [WARN ] HikariPool    [HikariPool-1 housekeeper]  c.z.h.p.HikariPool HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m40s759ms800µs500ns).
