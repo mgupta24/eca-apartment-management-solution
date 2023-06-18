@@ -3,9 +3,9 @@ spring:
     config:
       server:
         git:
-          uri: ${CONFIG_GIT_URI:git@github.com:mgupta24/configprops.git}
+          uri: ${CONFIG_GIT_URI:https://github.com/mgupta24/configprops.git}
           username: ${CONFIG_GIT_USERNAME:mgupta24}
-          password: ${CONFIG_GIT_TOKEN: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}
+          password: ${CONFIG_GIT_TOKEN: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}
           search-paths: '{profile}'
           skipSslValidation: true
           clone-on-start: true

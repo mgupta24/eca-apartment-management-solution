@@ -92,10 +92,10 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
       - EUREKA_URI=http://ecadiscovery:8761/eureka
-      - USER_MGM_POSTGRESQL_URL=192.168.29.10
+      - POSTGRESQL_URI=192.168.29.10
       - USER_MGM_POSTGRES_DB=ECA_USER_MGMT_DB
-      - USER_MGM_POSTGRES_USER=postgres
-      - USER_MGM_POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER_NAME=postgres
+      - POSTGRES_USER_PASSWORD=postgres
       - KAFKA_BOOTSTRAP_SERVER_URL=kafka:9092
       - CONFIG_IMPORT_URL=optional:configserver:http://ecaconfigserver:8070
       - CONFIG_SERVER_URL=http://ecaconfigserver:8070
@@ -126,7 +126,7 @@ services:
       - VISITOR_MGM_POSTGRES_PASSWORD=postgres
       - USER_SERVICE_ENDPOINT=http://ecausermgmt:6090/v1/users/phone/{phoneNumber}
       - VISITOR_REQ_TOPIC=visitor-notification
-      - VISITOR_KAFKA_BOOTSTRAP_SERVER=kafka:9092
+      - KAFKA_BOOTSTRAP_SERVER_URL=kafka:9092
       - REDIS_PORT=6379
       - REDIS_HOSTNAME=192.168.29.10
     container_name: visitor
