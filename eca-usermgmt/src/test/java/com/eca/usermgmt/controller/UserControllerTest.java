@@ -72,7 +72,7 @@ class UserControllerTest {
 	@Test
 	@SneakyThrows
 	@Order(1)
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void getAllUsersNoTest() {
 		mockMvc.perform(
 						MockMvcRequestBuilders.get(API_APARTMENT + "getAllUsers")
@@ -89,7 +89,7 @@ class UserControllerTest {
 	@SneakyThrows
 	@Test
 	@Order(2)
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void getAllUsersWithLoginFlowTest() {
 		Optional.of(registrationService.registration(getUserRegistrationRequest("/tenants_request.json")))
 				.ifPresent(customResponseResponseEntity -> {
@@ -127,7 +127,7 @@ class UserControllerTest {
 
 	@Test
 	@SneakyThrows
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void invalidUserTest() {
 		UserLoginRequest userLoginRequest = new UserLoginRequest();
 		mockMvc.perform(
@@ -150,7 +150,7 @@ class UserControllerTest {
 
 	@Test
 	@Order(3)
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void checkOwnerStrategyTest() throws Exception {
 		Optional.ofNullable(registrationService.registration(getUserRegistrationRequest("/owner_requests.json"))).ifPresent(data -> {
 			try {
@@ -176,7 +176,7 @@ class UserControllerTest {
 	}
 
 	@Test
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void checkPhoneNumberNotFound() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders
 						.get(API_APARTMENT + "phone/2390892")
@@ -186,7 +186,7 @@ class UserControllerTest {
 
 	@SneakyThrows
 	@Test
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void testVendorFlowTest() {
 		Optional.of(registrationService.registration(getUserRegistrationRequest("/vendor_request.json")))
 				.ifPresent(vendorResponse -> {
@@ -209,7 +209,7 @@ class UserControllerTest {
 
 	@SneakyThrows
 	@Test
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void updateOwnerTest() {
 		var ownerDTO = new OwnerDTO();
 		ownerDTO.setEmailId("updatedemailId@testcom");
@@ -226,7 +226,7 @@ class UserControllerTest {
 
 	@Test
 	@Order(3)
-	@CustomUserDetails(value = "vishabsingh@gmail.com")
+	@CustomUserDetails(value = "mitaligupta@gmail.com")
 	void updateOwnerRequestTest() throws Exception {
 		var userRegistrationRequest = getUserRegistrationRequest("/owner_requests.json");
 		userRegistrationRequest.setPhoneNo(3434343434L);

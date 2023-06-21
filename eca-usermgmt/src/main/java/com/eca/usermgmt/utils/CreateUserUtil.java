@@ -51,14 +51,14 @@ public class CreateUserUtil {
 
 	private static User getUser(JsonUtils jsonUtils) {
 		return jsonUtils.jsonToObject("{\n" +
-				"  \"username\": \"vishabsingh@gmail.com\",\n" +
+				"  \"username\": \"mitaligupta@gmail.com\",\n" +
 				"  \"password\": \"$2a$10$/QnTOj3aw3LtOpq1XtVrIuEn0Mt/JZejf6FTDWK.bcROMRjdc2uyi\",\n" +
 				"  \"owner\": {\n" +
 				"    \"type\": \"OWNER\",\n" +
-				"    \"firstName\": \"Vishab\",\n" +
-				"    \"lastName\": \"SINGH\",\n" +
+				"    \"firstName\": \"mitali\",\n" +
+				"    \"lastName\": \"gupta\",\n" +
 				"    \"phoneNo\": 9590319707,\n" +
-				"    \"emailId\": \"vishabsingh@gmail.com\",\n" +
+				"    \"emailId\": \"mitaligupta@gmail.com\",\n" +
 				"    \"addressLine\": \"Kathua Marheen\",\n" +
 				"    \"city\": \"Kathua \",\n" +
 				"    \"state\": \"J&K\",\n" +

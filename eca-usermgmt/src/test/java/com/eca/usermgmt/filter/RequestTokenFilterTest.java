@@ -65,7 +65,7 @@ class RequestTokenFilterTest {
 		var headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		HttpEntity<UserLoginRequest> entity = new HttpEntity<>(
-				UserLoginRequest.of("vishabsingh@gmail.com", "vishabsingh"),headers);
+				UserLoginRequest.of("mitaligupta@gmail.com", "mitali"),headers);
 		var token = restTemplate.postForObject(V1_USERS_URL_PATH + "login", entity, String.class);
 		log.info("Token {} ",token);
 		JsonNode root;

@@ -63,7 +63,7 @@ class UserUpdateServiceTest {
 		Mockito.when(ownerRepository.save(any())).thenReturn(owner);
 		Mockito.when(userRepository.save(any())).thenReturn(user);
 		var ownerDTO = new OwnerDTO();
-		ownerDTO.setEmailId("vishabsingh@gmail.com");
+		ownerDTO.setEmailId("test@gmail.com");
 		ownerDTO.setPassword("jai38972");
 		ownerDTO.setPhoneNo(9890348923L);
 		ownerDTO.setCity("test");

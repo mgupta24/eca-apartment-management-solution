@@ -1,1 +1,29 @@
-2023-06-18 00:21:49.686 [WARN ] HikariPool    [HikariPool-1 housekeeper]  c.z.h.p.HikariPool HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m43s485ms47µs500ns).
+2023-06-21 14:06:09.532 [INFO ] EcaVisitorApplication    [restartedMain]  c.e.v.EcaVisitorApplication Starting EcaVisitorApplication using Java 11.0.18 on LAPTOP-75BMVO9L with PID 23356 (D:\eca-apartment-management-solution\eca-visitor\target\classes started by MITALI in D:\eca-apartment-management-solution\eca-discovery)
+2023-06-21 14:06:09.548 [INFO ] EcaVisitorApplication    [restartedMain]  c.e.v.EcaVisitorApplication The following 1 profile is active: "dev"
+2023-06-21 14:06:09.604 [INFO ] DevToolsPropertyDefaultsPostProcessor    [restartedMain]  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-21 14:06:09.604 [INFO ] DevToolsPropertyDefaultsPostProcessor    [restartedMain]  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-21 14:06:11.219 [INFO ] RepositoryConfigurationDelegate    [restartedMain]  o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-21 14:06:11.423 [INFO ] RepositoryConfigurationDelegate    [restartedMain]  o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 190 ms. Found 1 JPA repository interfaces.
+2023-06-21 14:06:12.151 [INFO ] GenericScope    [restartedMain]  o.s.c.c.s.GenericScope BeanFactory id=5ad0ad60-6acd-33a1-bfea-e8273de7756f
+2023-06-21 14:06:14.107 [INFO ] TomcatWebServer    [restartedMain]  o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 6091 (http)
+2023-06-21 14:06:14.122 [INFO ] StandardService    [restartedMain]  o.a.c.c.StandardService Starting service [Tomcat]
+2023-06-21 14:06:14.123 [INFO ] StandardEngine    [restartedMain]  o.a.c.c.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-21 14:06:14.388 [INFO ] [/]    [restartedMain]  o.a.c.c.C.[.[.[/] Initializing Spring embedded WebApplicationContext
+2023-06-21 14:06:14.390 [INFO ] ServletWebServerApplicationContext    [restartedMain]  o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 4785 ms
+2023-06-21 14:06:14.902 [INFO ] HikariDataSource    [restartedMain]  c.z.h.HikariDataSource HikariPool-1 - Starting...
+2023-06-21 14:06:15.225 [INFO ] HikariDataSource    [restartedMain]  c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2023-06-21 14:06:15.242 [INFO ] H2ConsoleAutoConfiguration    [restartedMain]  o.s.b.a.h.H2ConsoleAutoConfiguration H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:visitor-service'
+2023-06-21 14:06:16.094 [WARN ] ZipkinAutoConfiguration    [pool-2-thread-1]  o.s.c.s.a.z.ZipkinAutoConfiguration Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect}]
+2023-06-21 14:06:17.937 [INFO ] LogHelper    [restartedMain]  o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-21 14:06:18.003 [INFO ] Version    [restartedMain]  o.h.Version HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-21 14:06:18.222 [INFO ] Version    [restartedMain]  o.h.a.c.Version HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-21 14:06:18.371 [INFO ] Dialect    [restartedMain]  o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-06-21 14:06:19.234 [INFO ] JtaPlatformInitiator    [restartedMain]  o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-21 14:06:19.248 [INFO ] LocalContainerEntityManagerFactoryBean    [restartedMain]  o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-21 14:06:20.676 [WARN ] JpaBaseConfiguration$JpaWebConfiguration    [restartedMain]  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-21 14:06:23.425 [WARN ] OptionalLiveReloadServer    [restartedMain]  o.s.b.d.a.OptionalLiveReloadServer Unable to start LiveReload server
+2023-06-21 14:06:24.084 [INFO ] DiscoveryClientOptionalArgsConfiguration    [restartedMain]  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration Eureka HTTP Client uses RestTemplate.
+2023-06-21 14:06:25.633 [WARN ] LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger    [restartedMain]  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-06-21 14:06:25.831 [INFO ] EndpointLinksResolver    [restartedMain]  o.s.b.a.e.w.EndpointLinksResolver Exposing 25 endpoint(s) beneath base path '/actuator'
+2023-06-21 14:06:25.962 [INFO ] TomcatWebServer    [restartedMain]  o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 6091 (http) with context path ''
+2023-06-21 14:06:26.587 [INFO ] EcaVisitorApplication    [restartedMain]  c.e.v.EcaVisitorApplication Started EcaVisitorApplication in 17.835 seconds (JVM running for 18.894)
