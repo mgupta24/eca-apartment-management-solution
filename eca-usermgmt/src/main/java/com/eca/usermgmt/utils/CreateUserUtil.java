@@ -1,7 +1,6 @@
 package com.eca.usermgmt.utils;
 
 import com.eca.usermgmt.constants.UserConstants;
-import com.eca.usermgmt.entity.Owner;
 import com.eca.usermgmt.entity.User;
 import com.eca.usermgmt.enums.Permissions;
 import com.eca.usermgmt.repository.OwnerRepository;

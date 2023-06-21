@@ -1,7 +1,6 @@
 package com.eca.usermgmt.entity;
 
 import com.eca.usermgmt.constants.UserConstants;
-import com.eca.usermgmt.constraint.NotBlank;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
