@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 cleanWs()
-                     git branch: 'main', url: 'https://github.com/mgupta24/eca-apartment-management-solution.git'
+                     git branch: 'main', url: 'https://github.com/mgupta24/eca-apartment-management-system.git'
                 }
             }
         stage('Build') {
