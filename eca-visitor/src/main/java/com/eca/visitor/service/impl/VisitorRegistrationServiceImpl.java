@@ -4,7 +4,7 @@ import com.eca.visitor.constants.VisitorConstants;
 import com.eca.visitor.dto.DataItem;
 import com.eca.visitor.dto.UserDTO;
 import com.eca.visitor.dto.UserRespDTO;
-import com.eca.visitor.dto.VisitorKafkaMessageDTO;
+import com.eca.visitor.dto.VisitorMessageDTO;
 import com.eca.visitor.dto.VisitorRegistrationRequest;
 import com.eca.visitor.dto.response.VisitorRegistrationResponse;
 import com.eca.visitor.dto.response.VisitorResponse;
@@ -55,15 +55,15 @@ public class VisitorRegistrationServiceImpl extends ExternalAPICall implements V
         return Optional.of(visitorRepository.save(visitorToSave))
                 .map(visitor -> {
                     if (kafkaEnabled) {
-                        sendVisitorToKafka(visitorToSave);
+                        sendVisitorNotification(visitorToSave);
                     }
                     return createVisitorRegistrationResponse(visitorToSave);
                 }).orElseThrow(() -> new VisitorManagementException("Unable To Save Visitor Data "));
     }
 
-    private void sendVisitorToKafka(Visitor visitor) {
-        VisitorKafkaMessageDTO visitorKafkaMessageDto = commonUtils.createVisitorkafkaMessageDto(visitor);
-        commonUtils.pushToKafka(visitorKafkaMessageDto);
+    private void sendVisitorNotification(Visitor visitor) {
+        VisitorMessageDTO visitorKafkaMessageDto = commonUtils.createVisitorMessageDto(visitor);
+        commonUtils.pushNotification(visitorKafkaMessageDto);
     }
     private Visitor parseUserDetailsForvisitor(Visitor visitorEntity, UserDTO userDto) {
         visitorEntity.setUserFirstName(userDto.getUserFirstName());

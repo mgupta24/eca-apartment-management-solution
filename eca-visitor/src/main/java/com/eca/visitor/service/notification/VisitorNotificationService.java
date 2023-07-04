@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @ConditionalOnExpression("${app.visitor.kafka.enabled}")
 @AllArgsConstructor
 @NoArgsConstructor
-public class VisitorKafkaNotificationService {
+public class VisitorNotificationService {
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;

@@ -4,9 +4,9 @@ import com.eca.visitor.dto.OwnerDTO;
 import com.eca.visitor.dto.TenantDTO;
 import com.eca.visitor.dto.UserDTO;
 import com.eca.visitor.dto.VendorDTO;
-import com.eca.visitor.dto.VisitorKafkaMessageDTO;
+import com.eca.visitor.dto.VisitorMessageDTO;
 import com.eca.visitor.entity.Visitor;
-import com.eca.visitor.service.notification.VisitorKafkaNotificationService;
+import com.eca.visitor.service.notification.VisitorNotificationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class CommonUtils {
     private ObjectMapper objectMapper;
 
     @Autowired(required = false)
-    private VisitorKafkaNotificationService visitorKafkaNotificationService;
+    private VisitorNotificationService visitorKafkaNotificationService;
 
     @Autowired
     private JsonUtils jsonUtils;
@@ -59,12 +59,12 @@ public class CommonUtils {
         return userDto;
     }
 
-    public void pushToKafka(VisitorKafkaMessageDTO visitorKafkaMessageDTO) {
+    public void pushNotification(VisitorMessageDTO visitorKafkaMessageDTO) {
         visitorKafkaNotificationService.sendNotification(jsonUtils.toJson(visitorKafkaMessageDTO));
 
     }
-    public VisitorKafkaMessageDTO createVisitorkafkaMessageDto(Visitor visitor) {
-        VisitorKafkaMessageDTO visitorKafkaMessageDTO = modelMapper.map(visitor, VisitorKafkaMessageDTO.class);
+    public VisitorMessageDTO createVisitorMessageDto(Visitor visitor) {
+        VisitorMessageDTO visitorKafkaMessageDTO = modelMapper.map(visitor, VisitorMessageDTO.class);
         visitorKafkaMessageDTO.setUserFirstName(visitor.getVisitorFirstName());
         visitorKafkaMessageDTO.setUserLastName(visitor.getVisitorLastName());
         return visitorKafkaMessageDTO;

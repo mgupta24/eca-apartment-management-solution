@@ -1,8 +1,8 @@
 package com.eca.visitor.utils;
 
-import com.eca.visitor.dto.VisitorKafkaMessageDTO;
+import com.eca.visitor.dto.VisitorMessageDTO;
 import com.eca.visitor.entity.Visitor;
-import com.eca.visitor.service.notification.VisitorKafkaNotificationService;
+import com.eca.visitor.service.notification.VisitorNotificationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,7 +21,7 @@ class CommonUtilsTest {
 	private ObjectMapper objectMapper;
 
 	@Mock
-	private VisitorKafkaNotificationService visitorKafkaNotificationService;
+	private VisitorNotificationService visitorKafkaNotificationService;
 
 	@Mock
 	private JsonUtils jsonUtils;
@@ -41,9 +41,9 @@ class CommonUtilsTest {
 	void createVisitorTest(){
 		var visitor = Visitor.builder().visitorFirstName("Test")
 				.visitorLastName("Gupta").build();
-		assertThat(commonUtils.createVisitorkafkaMessageDto(visitor))
+		assertThat(commonUtils.createVisitorMessageDto(visitor))
 				.isNotNull()
-				.extracting(VisitorKafkaMessageDTO::getVisitorFirstName,VisitorKafkaMessageDTO::getVisitorLastName)
+				.extracting(VisitorMessageDTO::getVisitorFirstName, VisitorMessageDTO::getVisitorLastName)
 				.doesNotContainNull()
 				.contains("Test","Gupta");
 	}

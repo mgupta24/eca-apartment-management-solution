@@ -26,7 +26,7 @@ class VisitorKafkaNotificationServiceTest {
 	private KafkaTemplate<String, String> kafkaTemplate;
 
 	@InjectMocks
-	private VisitorKafkaNotificationService visitorKafkaNotificationService;
+	private VisitorNotificationService visitorKafkaNotificationService;
 
 	@Mock
 	private ListenableFutureCallback<SendResult<String, String>> mockProducerCallback;

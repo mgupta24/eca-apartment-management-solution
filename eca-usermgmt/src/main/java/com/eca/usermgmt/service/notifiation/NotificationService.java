@@ -8,7 +8,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 
 @Slf4j
 @ConditionalOnExpression("${app.kafka.enabled}")
-public class KafkaNotificationService {
+public class NotificationService {
 
 	@Autowired(required = false)
 	private KafkaTemplate<String, String> kafkaTemplate;

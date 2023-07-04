@@ -10,7 +10,7 @@ import com.eca.usermgmt.exception.UserManagementException;
 import com.eca.usermgmt.repository.TenantsRepository;
 import com.eca.usermgmt.repository.UserRepository;
 import com.eca.usermgmt.service.impl.TenantServiceImpl;
-import com.eca.usermgmt.service.notifiation.KafkaNotificationService;
+import com.eca.usermgmt.service.notifiation.NotificationService;
 import com.eca.usermgmt.utils.JsonUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -73,7 +73,7 @@ class TenantServiceTest {
 	private KafkaTemplate<String,String> kafkaTemplate;
 
 	@Mock
-	private KafkaNotificationService kafkaNotificationService;
+	private NotificationService kafkaNotificationService;
 
 	@Mock
 	private PasswordEncoder passwordEncoder;

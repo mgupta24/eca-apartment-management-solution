@@ -17,10 +17,10 @@ scrape_configs:
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
     static_configs:
-      - targets: ['192.168.29.10:9090']
+      - targets: ['192.168.1.7:9090']
 
   - job_name: 'eca-spring-actuator'
     metrics_path: '/actuator/prometheus'
     scrape_interval: 5s
     static_configs:
-      - targets: ['192.168.29.10:6091','192.168.29.10:6090','192.168.29.10:6092']
+      - targets: ['192.168.1.7:6091','192.168.1.7:6090','192.168.1.7:6092']

@@ -1,0 +1,117 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eca-visitor-deployment
+  labels:
+    app: eca-visitor
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eca-visitor
+  template:
+    metadata:
+      labels:
+        app: eca-visitor
+    spec:
+      containers:
+      - name: eca-visitor
+        image: mgupta25/eca-visitor
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 6091
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 6091
+          initialDelaySeconds: 120
+          periodSeconds: 10
+          timeoutSeconds: 4
+          successThreshold: 1
+          failureThreshold: 66
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 6091
+          periodSeconds: 10
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 2
+        resources:
+          requests:
+            memory: '128Mi'
+            cpu: '200m'
+          limits:
+            memory: '700Mi'
+            cpu: "1000m"
+        env:
+          - name: POSTGRES_USER_NAME
+            valueFrom:
+              secretKeyRef:
+                name: eca-secret
+                key: postgres-user
+          - name: POSTGRES_USER_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: eca-secret
+                key: password
+          - name: SPRING_PROFILES_ACTIVE
+            valueFrom:
+              configMapKeyRef:
+                name: eca-configmap
+                key: spring-profiles-active
+          - name: ZIPKIN_URI
+            valueFrom:
+              configMapKeyRef:
+                name: eca-configmap
+                key: zipkin-uri
+          - name: EUREKA_URI
+            valueFrom:
+              configMapKeyRef:
+                name: eca-configmap
+                key: eureka-uri
+          - name: POSTGRESQL_URI
+            valueFrom:
+              configMapKeyRef:
+                name: eca-configmap
+                key: postgres-uri
+          - name: SWAGGER_IP_ADDRESS
+            value: http://192.168.117.129:6091
+          - name: VISITOR_MGM_POSTGRES_DB
+            value: eca_visitor_db
+          - name: USER_SERVICE_ENDPOINT
+            value: http://ecausermgmt:6090/v1/users/phone/{phoneNumber}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eca-visitor-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: eca-visitor
+  ports:
+    - protocol: TCP
+      port: 9300
+      targetPort: 6091
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: eca-visitor-replica
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eca-visitor
+  template:
+    metadata:
+      labels:
+        app: eca-visitor
+    spec:
+      containers:
+        - name: eca-visitor
+          image: mgupta25/eca-visitor
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6091

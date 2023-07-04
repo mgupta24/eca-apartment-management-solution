@@ -13,7 +13,7 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class VisitorKafkaMessageDTO  extends BaseRequest{
+public class VisitorMessageDTO extends BaseRequest{
 
     private String userFirstName;
 

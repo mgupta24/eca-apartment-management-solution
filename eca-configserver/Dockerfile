@@ -9,6 +9,4 @@ ENV MEMORY_OPTS=" -XX:+UseG1GC \
 -XX:HeapDumpPath=/tmp/Heapdump.hprof \
 -XX:+UseStringDeduplication"
 
-COPY entrypoint.sh ./
-RUN chmod 755 ./entrypoint.sh
-ENTRYPOINT ["./entrypoint.sh"]
+CMD java -jar /ecaconfigserver.jar

@@ -19,7 +19,7 @@ import com.eca.usermgmt.service.PermissionService;
 import com.eca.usermgmt.service.RoleService;
 import com.eca.usermgmt.service.UserUpdateService;
 import com.eca.usermgmt.service.UserService;
-import com.eca.usermgmt.service.notifiation.KafkaNotificationService;
+import com.eca.usermgmt.service.notifiation.NotificationService;
 import com.eca.usermgmt.service.strategy.UserStrategyFactory;
 import com.eca.usermgmt.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -63,7 +63,7 @@ public class UserUpdateServiceImpl implements UserUpdateService {
 	private VendorRepository vendorRepository;
 
 	@Autowired(required = false)
-	private KafkaNotificationService notificationService;
+	private NotificationService notificationService;
 
 	@Autowired
 	private RoleService roleService;
@@ -109,7 +109,7 @@ public class UserUpdateServiceImpl implements UserUpdateService {
 					userService.saveUserDetails(userDetails);
 					log.info("UpdateUserServiceImpl:: userDetails {} ",userDetails);
 					var userDetailsDTO = modelMapper.map(userDetails, UserDetailsDTO.class);
-					pushToKafka(userDetailsDTO);
+					pushNotification(userDetailsDTO);
 					return toBaseResponse(List.of(userDetailsDTO));
 				}).orElseThrow(() -> new UserManagementException(UserConstants.OWNER_UPDATION_ERROR+ownerId));
 	}
@@ -141,7 +141,7 @@ public class UserUpdateServiceImpl implements UserUpdateService {
 					userDetails.setPassword(passwordEncoder.encode(vendorDTO.getPassword()));
 					userService.saveUserDetails(userDetails);
 					var vendorDetails = modelMapper.map(userDetails, UserDetailsDTO.class);
-					pushToKafka(vendorDetails);
+					pushNotification(vendorDetails);
 					return vendorDetails;
 				}).orElseThrow(() -> new UserManagementException(UserConstants.VENDOR_UPDATION_ERROR + vendorId));
 		return toBaseResponse(List.of(userDetailsDTO));
@@ -171,7 +171,7 @@ public class UserUpdateServiceImpl implements UserUpdateService {
 		vendor.setType(TypeOfUser.VENDOR.toString());
 	}
 
-	private void pushToKafka(UserDetailsDTO details) {
+	private void pushNotification(UserDetailsDTO details) {
 		if (kafkaEnabled) {
 			var kafkaMessageDTO = KafkaMessageDTO.builder()
 					.userId(details.getUsername())

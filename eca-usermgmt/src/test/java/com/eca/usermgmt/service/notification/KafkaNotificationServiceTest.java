@@ -1,6 +1,6 @@
 package com.eca.usermgmt.service.notification;
 
-import com.eca.usermgmt.service.notifiation.KafkaNotificationService;
+import com.eca.usermgmt.service.notifiation.NotificationService;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.TopicPartition;
 import org.junit.jupiter.api.Test;
@@ -30,7 +30,7 @@ class KafkaNotificationServiceTest {
 	private KafkaTemplate<String, String> kafkaTemplate;
 
 	@InjectMocks
-	private KafkaNotificationService kafkaNotificationService;
+	private NotificationService kafkaNotificationService;
 
 	@Mock
 	private ListenableFutureCallback<SendResult<String, String>> mockProducerCallback;

@@ -73,7 +73,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
       - EUREKA_URI=http://ecadiscovery:8761/eureka
-      - APART_POSTGRES_URL=192.168.29.10
+      - APART_POSTGRES_URL=192.168.1.7
       - APART_POSTGRES_DB=ECA_APARTMENT_DB
       - APART_POSTGRES_USER_NAME=postgres
       - APART_POSTGRES_PASSWORD=postgres
@@ -92,7 +92,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
       - EUREKA_URI=http://ecadiscovery:8761/eureka
-      - POSTGRESQL_URI=192.168.29.10
+      - POSTGRESQL_URI=192.168.1.7
       - USER_MGM_POSTGRES_DB=ECA_USER_MGMT_DB
       - POSTGRES_USER_NAME=postgres
       - POSTGRES_USER_PASSWORD=postgres
@@ -102,7 +102,7 @@ services:
       - CATALOG_SERVICE_URL=http://ecaapartmentcatalog:6092
       - USER_MGM_TOPIC=user-mgmt-notification
       - REDIS_PORT=6379
-      - REDIS_HOSTNAME=192.168.29.10
+      - REDIS_HOSTNAME=192.168.1.7
     container_name: usermgmt
     hostname: ecausermgmt
     depends_on:
@@ -120,7 +120,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
       - EUREKA_URI=http://ecadiscovery:8761/eureka
-      - VISITOR_MGM_POSTGRESQL_URL=192.168.29.10
+      - VISITOR_MGM_POSTGRESQL_URL=192.168.1.7
       - VISITOR_MGM_POSTGRES_DB=ECA_VISITOR_DB
       - VISITOR_MGM_POSTGRES_USER=postgres
       - VISITOR_MGM_POSTGRES_PASSWORD=postgres
@@ -128,7 +128,7 @@ services:
       - VISITOR_REQ_TOPIC=visitor-notification
       - KAFKA_BOOTSTRAP_SERVER_URL=kafka:9092
       - REDIS_PORT=6379
-      - REDIS_HOSTNAME=192.168.29.10
+      - REDIS_HOSTNAME=192.168.1.7
     container_name: visitor
     hostname: ecavisitor
     depends_on:

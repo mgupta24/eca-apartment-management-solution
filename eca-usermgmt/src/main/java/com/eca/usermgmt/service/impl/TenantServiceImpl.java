@@ -13,7 +13,7 @@ import com.eca.usermgmt.exception.UserManagementException;
 import com.eca.usermgmt.repository.TenantsRepository;
 import com.eca.usermgmt.repository.UserRepository;
 import com.eca.usermgmt.service.TenantService;
-import com.eca.usermgmt.service.notifiation.KafkaNotificationService;
+import com.eca.usermgmt.service.notifiation.NotificationService;
 import com.eca.usermgmt.utils.DateUtils;
 import com.eca.usermgmt.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -56,7 +56,7 @@ public class TenantServiceImpl implements TenantService {
 	private Validator validator;
 
 	@Autowired(required = false)
-	private KafkaNotificationService notificationService;
+	private NotificationService notificationService;
 
 	@Autowired
 	private JsonUtils jsonUtils;
@@ -140,13 +140,13 @@ public class TenantServiceImpl implements TenantService {
 		return Optional.of(tenantsRepository.save(objectToSave))
 				.map(entity -> {
 					var tenantsDto = toTenantsDto(entity);
-					pushToKafka(tenantsDto, CREATE);
+					pushNotification(tenantsDto, CREATE);
 					return toBaseResponse(List.of(tenantsDto), HttpStatus.CREATED);
 				})
 				.orElseThrow(() -> new UserManagementException(UserConstants.TENANT_CREATION_FAILED));
 	}
 
-	private <T> void pushToKafka(T toKafka, KafkaMessageDTO.EventType eventType) {
+	private <T> void pushNotification(T toKafka, KafkaMessageDTO.EventType eventType) {
 		if (kafkaEnabled) {
 			var kafkaMessageDTO = modelMapper.map(toKafka, KafkaMessageDTO.class);
 			kafkaMessageDTO.setEventType(eventType);
@@ -189,7 +189,7 @@ public class TenantServiceImpl implements TenantService {
 								userDetails.setUserPhoneNumber(tenant.getPhoneNo());
 								userDetails.setPassword(passwordEncoder.encode(tenantsDTO.getPassword()));
 								userRepository.save(userDetails);
-								pushToKafka(userDetails, UPDATE);
+								pushNotification(userDetails, UPDATE);
 							});
 					var tenantDto = modelMapper.map(tenant, TenantsDTO.class);
 					removeFromCache(id);
@@ -253,7 +253,7 @@ public class TenantServiceImpl implements TenantService {
 		log.info("TenantServiceImpl::deleteTenant {} user ", user);
 		userRepository.delete(user);
 		tenantsRepository.deleteById(id);
-		pushToKafka(user, DELETE);
+		pushNotification(user, DELETE);
 	}
 
 	private ResponseEntity<BaseResponse> toBaseResponse(List<TenantsDTO> tenants, HttpStatus httpStatus) {

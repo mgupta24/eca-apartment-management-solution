@@ -1,0 +1,127 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eca-usermgmt-deployment
+  labels:
+    app: eca-usermgmt
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eca-usermgmt
+  template:
+    metadata:
+      labels:
+        app: eca-usermgmt
+    spec:
+      containers:
+      - name: eca-usermgmt
+        image: mgupta25/eca-usermgmt
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 6090
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 6090
+          initialDelaySeconds: 120
+          periodSeconds: 10
+          timeoutSeconds: 4
+          successThreshold: 1
+          failureThreshold: 66
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 6090
+          periodSeconds: 10
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 2
+        resources:
+          requests:
+            memory: '128Mi'
+            cpu: '200m'
+          limits:
+            memory: '700Mi'
+            cpu: "1000m"
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            valueFrom:
+              configMapKeyRef:
+                name: eca-configmap
+                key: spring-profiles-active
+          - name: ZIPKIN_URI
+            valueFrom:
+              configMapKeyRef:
+                name: eca-configmap
+                key: zipkin-uri
+          - name: EUREKA_URI
+            valueFrom:
+              configMapKeyRef:
+                name: eca-configmap
+                key: eureka-uri
+          - name: POSTGRES_USER_NAME
+            valueFrom:
+              secretKeyRef:
+                name: eca-secret
+                key: postgres-user
+          - name: POSTGRES_USER_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: eca-secret
+                key: password
+          - name: POSTGRESQL_URI
+            valueFrom:
+              configMapKeyRef:
+                name: eca-configmap
+                key: postgres-uri
+          - name: CONFIG_IMPORT_URL
+            configMapKeyRef:
+              name: eca-configmap
+              key: config-import-url
+          - name: CONFIG_SERVER_URL
+            configMapKeyRef:
+              name: eca-configmap
+              key: config-server-url
+          - name: CATALOG_SERVICE_URL
+            configMapKeyRef:
+              name: eca-configmap
+              key: catalog-service-url
+          - name: SWAGGER_IP_ADDRESS
+            value: http://192.168.117.129:6091
+          - name: USER_MGM_POSTGRES_DB
+            value: eca_user_mgmt_db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eca-usermgmt-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: eca-usermgmt
+  ports:
+    - protocol: TCP
+      port: 9300
+      targetPort: 6090
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: eca-usermgmt-replica
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eca-usermgmt
+  template:
+    metadata:
+      labels:
+        app: eca-usermgmt
+    spec:
+      containers:
+        - name: eca-usermgmt
+          image: mgupta25/eca-usermgmt
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6090

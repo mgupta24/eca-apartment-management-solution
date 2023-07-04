@@ -10,7 +10,7 @@ import com.eca.usermgmt.repository.OwnerRepository;
 import com.eca.usermgmt.repository.UserRepository;
 import com.eca.usermgmt.repository.VendorRepository;
 import com.eca.usermgmt.service.impl.UserUpdateServiceImpl;
-import com.eca.usermgmt.service.notifiation.KafkaNotificationService;
+import com.eca.usermgmt.service.notifiation.NotificationService;
 import com.eca.usermgmt.service.strategy.UserStrategyFactory;
 import com.eca.usermgmt.utils.JsonUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -70,7 +70,7 @@ class KafkaUserServiceTest {
 	private UserService userService;
 
 	@Mock
-	private KafkaNotificationService notificationService;
+	private NotificationService notificationService;
 
 	@InjectMocks
 	private UserUpdateServiceImpl updateUserService;

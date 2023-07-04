@@ -31,7 +31,7 @@ public class GenerateJwtToken {
 		var claims = getPermissionsAuthority(userDetails);
 		return Jwts.builder()
 				.setId(UUID.randomUUID().toString())
-				.setIssuer("vissingh")
+				.setIssuer("mgupta")
 				.setSubject(userDetails.getUsername())
 				.setClaims(claims)
 				.setIssuedAt(new Date())

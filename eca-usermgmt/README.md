@@ -7,7 +7,7 @@ This Application is to register tenants, flat owners in the apartments services.
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/mgupta24/eca-apartment-management-solution.git
+git clone https://github.com/mgupta24/eca-apartment-management-system.git
 ```
 
 **2. Run the app using maven**

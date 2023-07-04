@@ -14,7 +14,7 @@ import com.eca.usermgmt.repository.OwnerRepository;
 import com.eca.usermgmt.repository.TenantsRepository;
 import com.eca.usermgmt.repository.VendorRepository;
 import com.eca.usermgmt.service.UserService;
-import com.eca.usermgmt.service.notifiation.KafkaNotificationService;
+import com.eca.usermgmt.service.notifiation.NotificationService;
 import com.eca.usermgmt.utils.JsonUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +49,7 @@ public class UserTypeFactory {
     @Autowired
     private VendorRepository vendorRepository;
     @Autowired(required = false)
-    private KafkaNotificationService kafkaNotificationService;
+    private NotificationService kafkaNotificationService;
     @Autowired
     private JsonUtils jsonUtils;
     @Value("${app.kafka.enabled}")
@@ -108,7 +108,7 @@ public class UserTypeFactory {
                             .owner(owner).build();
                     userService.saveUserWithDefaultRoles(userDetails);
                     log.info("Save Owner In UserDetails {} ", owner);
-                    pushToKafka(userDetails);
+                    pushNotification(userDetails);
                     return prepareResponse(userDetails, owner.getType());
                 })
                 .orElseThrow(() -> new UserManagementException(UserConstants.USER_REGISTRATION_ERROR));
@@ -126,7 +126,7 @@ public class UserTypeFactory {
                             .vendor(vendor).build();
                     userService.saveUserWithDefaultRoles(userDetails);
                     log.info("Save Vendor In UserDetails {} ", userDetails);
-                    pushToKafka(userDetails);
+                    pushNotification(userDetails);
                     return prepareResponse(userDetails, vendor.getType());
                 })
                 .orElseThrow(() -> new UserManagementException(UserConstants.USER_REGISTRATION_ERROR));
@@ -144,12 +144,12 @@ public class UserTypeFactory {
                     user.setUserPhoneNumber(tenants.getPhoneNo());
                     userService.saveUserWithDefaultRoles(user);
                     log.info("Save Tenants In UserDetails {} ", user);
-                    pushToKafka(user);
+                    pushNotification(user);
                     return prepareResponse(user, tenants.getType());
                 }).orElseThrow(() -> new UserManagementException(UserConstants.USER_REGISTRATION_ERROR));
     }
 
-    private void pushToKafka(User user) {
+    private void pushNotification(User user) {
         if (kafkaEnabled) {
             var kafkaMessageDTO = KafkaMessageDTO.builder()
                     .userId(user.getUsername())

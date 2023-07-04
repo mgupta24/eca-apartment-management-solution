@@ -1,6 +1,6 @@
 package com.eca.usermgmt.config;
 
-import com.eca.usermgmt.service.notifiation.KafkaNotificationService;
+import com.eca.usermgmt.service.notifiation.NotificationService;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -57,8 +57,8 @@ public class KafkaConfiguration {
 	}
 
 	@Bean
-	public KafkaNotificationService kafkaNotificationService() {
-		return new KafkaNotificationService();
+	public NotificationService kafkaNotificationService() {
+		return new NotificationService();
 	}
 }
 
